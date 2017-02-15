@@ -103,7 +103,7 @@ I did not use Bonferroni correction. This is because, using it will make the exp
 
 
 ### Recommendation
-**Make a recommendation and briefly describe your reasoning.**
+**Make a recommendation and briefly describe your reasoning.**  
 I performed two hypothesis test. First Gross Conversion and second Net Conversion.
 
 The Gross Conversion is defined as the ratio of the number of users enrolling in the course to the number of user who clicked Start Now Button. As the experiment page recommends the time required per week to complete this course, it will reduce the total number of users enrolling for free Trial. Also the coaches will be able to concentrate on less number of students and able to convert them to paid users. 
