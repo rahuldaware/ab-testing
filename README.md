@@ -42,6 +42,8 @@ From the number of pageviews quiz, I made the following calculation for the two 
 | Gross Conversion      | 0.2063 | 0.0202 | 645875 |
 | Net Conversion      | 0.1093 | 0.0156  | 685325 |
 
+It would not make sense to use Bonferroni correction as we are using just two metrics which are highly correlated. 
+
 ####Duration vs. Exposure
 **Indicate what fraction of traffic you would divert to this experiment and, given this, how many days you would need to run the experiment.**
 
@@ -51,8 +53,8 @@ I would divert 70% of the traffic to the experiment. Given that, the experiment 
 
 The experiment is not extremely risky given that it does not affect existing paying customers, and is simple enough that there is a low chance of bugs occurring in the process. Nevertheless it may have a substantial impact on new enrollments, and diverting 100% of the traffic may thus not be advisable.
 
-##Experiment Analysis
-###Sanity Checks
+## Experiment Analysis
+### Sanity Checks
 **For each of your invariant metrics, give the 95% confidence interval for the value you expect to observe, the actual observed value, and whether the metric passes your sanity check.**
 
 ```
@@ -69,8 +71,8 @@ Observed 0.0822
 Result : PASS
 ```
 
-###Result Analysis
-####Effect Size Tests
+### Result Analysis
+#### Effect Size Tests
 **For each of your evaluation metrics, give a 95% confidence interval around the difference between the experiment and control groups. Indicate whether each metric is statistically and practically significant.**
 
 ```
@@ -83,7 +85,7 @@ Statistically Significant : NO
 Practically Significant : NO
 ```
 
-####Sign Tests
+#### Sign Tests
 **For each of your evaluation metrics, do a sign test using the day-by-day data, and report the p-value of the sign test and whether the result is statistically significant.**
 
 ```
@@ -94,33 +96,22 @@ Net Conversion: 0.6776
 Statistically Significant : NO
 ```
 
-####Summary
+### Summary
 **State whether you used the Bonferroni correction, and explain why or why not. If there are any discrepancies between the effect size hypothesis tests and the sign tests, describe the discrepancy and why you think it arose.**
 
-I did not use a Bonferroni correction because we are only testing one variation. It might be useful to apply the Bonferroni correction if we decide to do post-test segmentation on the results, for example based on browser type or countries of origin.
+I did not use Bonferroni correction. This is because, using it will make the experiment more conservative. Bonferroni correction is not designed for using with multiple metrics. As we are using multiple metrics, using Bonferroni correction will not be of much help. Bonferroni correction is designed for another type of errors, for example, it can help us if planned to launch experiment if one or another metric became statistically significant.There was no discrepancy between the hypothesis test and sign test.  
 
-###Recommendation
+
+### Recommendation
 **Make a recommendation and briefly describe your reasoning.**
+I performed two hypothesis test. First Gross Conversion and second Net Conversion.
 
-The metrics I was interested in were **Gross conversion** and **Net conversion**.
+The Gross Conversion is defined as the ratio of the number of users enrolling in the course to the number of user who clicked Start Now Button. As the experiment page recommends the time required per week to complete this course, it will reduce the total number of users enrolling for free Trial. Also the coaches will be able to concentrate on less number of students and able to convert them to paid users. 
 
-Gross conversion turned out to be negative and practically significant. This is a good outcome because we lower our costs by discouraging trial signups that are unlikely to convert.
-Net conversion unfortunately ended up being statistically and practically insignificant and the confidence interval includes negative numbers. Therefore, there is a risk that the introduction of the trial screener may lead to a decrease in revenue.
+The Net Conversion is defined as the number of users who enrolled for the Free Trial and make their first payment to the number of users who clicked the start free trial button.
 
-We should therefore consider test other designs of the screener before we decide whether to release the feature, or abandon the idea entirely.
+I would recommend that the Gross Conversion Metric is actually showing positive results. The students who left are those who do not have enough time for courses. In Net Conversion Metric, I do not see statistically significant change. But,the confidence interval includes the negative of the practical significance boundary. There is possibility that the number went down to an amount that matter to bussiness. To recommend, I would not support launching the project.
 
 ### Follow-Up Experiment
 **Give a high-level description of the follow up experiment you would run, what your hypothesis would be, what metrics you would want to measure, what your unit of diversion would be, and your reasoning for these choices.**  
 
-Goals of any company are earn money by satisfying customer needs. I this experiment we tried to reduce distraction of users, who are going to enroll to trial but not going to spend a lot on time by studying. But we can work with other group of students, who auditing course for free, but spend more than 5 hours a week. If they decide to switch to non-free service, they can improve quality of learning and receive valuable certificate. For the company it can increase the revenue.
-
-So, the null hypothesis is: Showing of "start trial screen" for students who have access to course materials and spend more than 5 hours a week will not increase retention.
-
-Because we want to introduce this feature to user already signed to our coursed unit of diversion should be user_id. As invariant metrics we can use number of active user_id's, because it's our unit of diversion and number of users clicking 'access course materials', because we measure it before the experiment stage.
-
-As evaluation metric we can use overall retention, because we want to increase number of paying customers by this change.
-
-### References
-- http://www.utdallas.edu/~herve/Abdi-Bonferroni2007-pretty.pdf
-- https://en.wikipedia.org/wiki/Standard_deviation
-- http://graphpad.com/quickcalcs/binomial1.cfm
