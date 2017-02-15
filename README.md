@@ -1,28 +1,28 @@
-#A/B Testing
+#A/B Testing for Introducing a Screener
 
 ##Experiment Design
 ###Metric Choice
 
 **List which metrics you will use as invariant metrics and evaluation metrics here.**  
 
-Invariant Metrics : Number of clicks, Number of cookies, Click-through-probability
+Invariant Metrics : Number of clicks, Number of cookies, Click-through-probability  
 Evaluation metrics : Gross conversion, Retention, Net conversion
 
 **For each metric, explain both why you did or did not use it as an invariant metric and why you did or did not use it as an evaluation metric. Also, state what results you will look for in your evaluation metrics in order to launch the experiment.**
 
-1. Number of cookies: This is a good invariant metric because the visits happen before the user visits the experiment. 
-2. Number of clicks: This is a good invariant metric because the clicks happen before the user visits the experiment.
-3. Number of user-ids: This is not a good invariant metric because the number of users who enroll in the free trial is dependent on the experiment.
+1. Number of cookies: Good invariant metric. Number of cookies will not change in the course of experiment.
+2. Number of user-ids: The user-ids will not be available unless users register for free trial. Hence, it is not a good invariant metric. User-ids are not good evaluation metric because there might be a difference between number of visitors in the experiment and control groups. Hence, this is not ideal metric for both invariant and evaluation metric.
+3. Number of clicks: Good invariant metric. Number of clicks will not change in the course of experiment.
 4. Click-through-probability: This one is a good invariant metric because the clicks happen before the user sees the experiment.  
-5. Gross conversion: This is not a good invariant metric because the number of users who enroll in the free trial is dependent on the experiment. Good evaluation metric because it is directly dependent on the effect of the experiment and allows us to show whether we managed to decrease the cost of enrollments that aren’t likely to become paying customers.  
-6. Retention: Not a good invariant metric because the number of users who enroll in the free trial is dependent on the experiment. Good evaluation metric because it is directly dependent on the effect of the experiment, and also shows positive financial outcome of the change.  
-7. Net conversion: Not a good invariant metric because the number of users who enroll in the free trial is dependent on the experiment. Good evaluation metric because it is directly dependent on the effect of the experiment, and also shows positive financial outcome of the change.  
+5. Gross conversion: This cannot be an invariant metric because the conversion can vary for the experiment and control group. On the other hand, this is a very good evaluation metric. The gross conversion can be different in both control and experiment group hence can be used as an evaluation metric.
+6. Retention: This is the ratio of number of users who remain after 14 day trial and make first payment to the number of users who sign up for 14 days trial.This is not a good invariant metric because the number of users who enroll in the free trial is dependent on the experiment. This is a very good evaluation metric because the retention ratio in experiment group is expected to be higher because of low enrolment , if experiment meets the assumption.  
+7. Net conversion: Again, this is not a good invariant metric because the number of users who enroll in the free trial is dependent on the experiment. Net conversion would be higher/lower for the experiment group depending on the outcome of the experiment. This will be a good evaluation metric as it is directly dependent on the effect of the experiment.
 
-In this project, I will focus on Gross conversion metric and Net conversion metric. Gross conversion metric will show if we lower our costs by introducing the screener. The net conversion metric will show how the change affects our revenues.
+For the sake of this project, I will focus on Gross Conversion and Net conversion Metrics. Gross conversion metric will imply if we lower our costs by introducing the screener pop-up. The net conversion metric will show us how the change affects our revenues.Hence, for effectiveness of the experiment, we should expect to observe decrease in Gross Conversion metric and increase in Net Conversion Metric.
 
 ###Measuring Standard Deviation
 **List the standard deviation of each of your evaluation metrics**
-
+The standard deviation is calculated with the formula : SD = sqrt((p*(1-p)/N)
 ```
 Net Conversion: 0.0156
 Gross Conversion: 0.0202
