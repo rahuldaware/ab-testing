@@ -115,3 +115,15 @@ I would recommend that the Gross Conversion Metric is actually showing positive 
 ### Follow-Up Experiment
 **Give a high-level description of the follow up experiment you would run, what your hypothesis would be, what metrics you would want to measure, what your unit of diversion would be, and your reasoning for these choices.**  
 
+I would like to put a follow up experiment in which the student needs to do a free quick course whose score would recommend the student if he/she is ready to take it or not. This will make sure all the students pay before they join the course. This will also efficiently utilize coaches' time.
+
+In order to reduce the attrition rate in early of course, that is those students who left the course early because they are unknowledgeable about pre requisite leanings. We need a course or a Project, such that the users able to get an idea what prerequisite knowledge they should know & and what the course is all about. The system also need an auto grader so coaches would spend more time to help those users who passed this project and continued in the Course in Paid service.
+
+The hypothesis is that Udacity will be able to know the seriously interested students and coaches will able to devote more time on those users who are actually interested to pass the course. The unit of diversion would be user ids when they register for introductory course.
+
+Invariant Metrics: Number of users enroll in introductory free course.
+
+Evaluation Metrics: 
+Net Conversion : The net conversion would remain low as the number of students who pass the introductory course would be less and lesser will be the students who actually pay for further courses.
+
+Course Graduate Ratio: The Course Graduate Ratio are those users who completed the paid courses divided by total users who paid there first payment. The purpose for this metric is to predict the introductory course affected the Completion Ratio is positive or in negative way. This Metric maybe remain high, as only those student able to get in paid service who are really interested in passing the course.
