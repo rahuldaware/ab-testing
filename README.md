@@ -35,8 +35,12 @@ Empirical Standard deviation should be comparable to analytic estimate for Gross
 ###Sizing
 ####Number of Samples vs. Power
 **Indicate whether you will use the Bonferroni correction during your analysis phase, and give the number of pageviews you will need to power you experiment appropriately**
+From the number of pageviews quiz, I made the following calculation for the two metrics : 
 
-I selected Gross Conversion and Net conversion as my evaluation metrics. I will need 685324 pageviews to power the experiment with these metrics. 
+| Metric        | Value   | Standard Deviation  | Pageviews   |
+| ------------- |:-------------:| -----:| ---------:|
+| Gross Conversion      | 0.2063 | 0.0202 | 645875 |
+| Net Conversion      | 0.1093 | 0.0156  | 685325 |
 
 ####Duration vs. Exposure
 **Indicate what fraction of traffic you would divert to this experiment and, given this, how many days you would need to run the experiment.**
