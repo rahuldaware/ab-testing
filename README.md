@@ -11,14 +11,14 @@ Evaluation metrics : Gross conversion, Retention, Net conversion
 **For each metric, explain both why you did or did not use it as an invariant metric and why you did or did not use it as an evaluation metric. Also, state what results you will look for in your evaluation metrics in order to launch the experiment.**
 
 1. Number of cookies: Good invariant metric. Number of cookies will not change in the course of experiment.
-2. Number of user-ids: The user-ids will not be available unless users register for free trial. Hence, it is not a good invariant metric. User-ids are not good evaluation metric because there might be a difference between number of visitors in the experiment and control groups. Hence, this is not ideal metric for both invariant and evaluation metric.
+2. Number of user-ids: The user-ids will not be available unless users register for free trial. Hence, it is not a good invariant metric. User-ids can be used as are evaluation metric as there might be a difference between number of visitors in the experiment and control groups. But this metric is not normalised. Hence, this is not ideal metric for both invariant and evaluation metric.
 3. Number of clicks: Good invariant metric. Number of clicks will not change in the course of experiment.
 4. Click-through-probability: This one is a good invariant metric because the clicks happen before the user sees the experiment.  
 5. Gross conversion: This cannot be an invariant metric because the conversion can vary for the experiment and control group. On the other hand, this is a very good evaluation metric. The gross conversion can be different in both control and experiment group hence can be used as an evaluation metric.
 6. Retention: This is the ratio of number of users who remain after 14 day trial and make first payment to the number of users who sign up for 14 days trial.This is not a good invariant metric because the number of users who enroll in the free trial is dependent on the experiment. This is a very good evaluation metric because the retention ratio in experiment group is expected to be higher because of low enrolment , if experiment meets the assumption.  
 7. Net conversion: Again, this is not a good invariant metric because the number of users who enroll in the free trial is dependent on the experiment. Net conversion would be higher/lower for the experiment group depending on the outcome of the experiment. This will be a good evaluation metric as it is directly dependent on the effect of the experiment.
 
-For the sake of this project, I will focus on Gross Conversion and Net conversion Metrics. Gross conversion metric will imply if we lower our costs by introducing the screener pop-up. The net conversion metric will show us how the change affects our revenues.Hence, for effectiveness of the experiment, we should expect to observe decrease in Gross Conversion metric and increase in Net Conversion Metric.
+For the sake of this project, I will focus on Gross Conversion and Net conversion Metrics. Gross conversion metric will imply if we lower our costs by introducing the screener pop-up. The net conversion metric will show us how the change affects our revenues.Hence, for effectiveness of the experiment, we should expect to observe decrease in Gross Conversion metric and no decrease in Net Conversion Metric.
 
 ###Measuring Standard Deviation
 **List the standard deviation of each of your evaluation metrics**
@@ -42,7 +42,7 @@ From the number of pageviews quiz, I made the following calculation for the two 
 | Gross Conversion      | 0.2063 | 0.0202 | 645875 |
 | Net Conversion      | 0.1093 | 0.0156  | 685325 |
 
-It would not make sense to use Bonferroni correction as we are using just two metrics which are highly correlated. 
+It would not make sense to use Bonferroni correction as we are using just two metrics which are highly correlated. During this experiment, there is no chance that anyone would get hurt. Also, there is no sensitive data. Hence, it would be fine to divert the entire traffic towards this experiment.
 
 ####Duration vs. Exposure
 **Indicate what fraction of traffic you would divert to this experiment and, given this, how many days you would need to run the experiment.**
@@ -99,7 +99,7 @@ Statistically Significant : NO
 ### Summary
 **State whether you used the Bonferroni correction, and explain why or why not. If there are any discrepancies between the effect size hypothesis tests and the sign tests, describe the discrepancy and why you think it arose.**
 
-I did not use Bonferroni correction. This is because, using it will make the experiment more conservative. Bonferroni correction is not designed for using with multiple metrics. As we are using multiple metrics, using Bonferroni correction will not be of much help. Bonferroni correction is designed for another type of errors, for example, it can help us if planned to launch experiment if one or another metric became statistically significant.There was no discrepancy between the hypothesis test and sign test.  
+I did not use Bonferroni correction. This is because, using it will make the experiment more conservative. The Bonferroni correction is designed to be used with multiple metrics. In this experiment, we have multiple metrics and we need all of them to meet some criteria in order to launch. If we had multiple metrics, but we would need only one of them to meet our criteria in order to launch, then the Bonferroni correction would have been useful. But we need multiple metrics to be satisfied. Hence, it would not be useful to use Bonferroni correction here. Bonferroni correction is designed for another type of errors, for example, it can help us if planned to launch experiment if one or another metric became statistically significant.There was no discrepancy between the hypothesis test and sign test.  
 
 
 ### Recommendation
@@ -119,7 +119,7 @@ I would like to put a follow up experiment in which the student needs to do a fr
 
 In order to reduce the attrition rate in early of course, that is those students who left the course early because they are unknowledgeable about pre requisite leanings. We need a course or a Project, such that the users able to get an idea what prerequisite knowledge they should know & and what the course is all about. The system also need an auto grader so coaches would spend more time to help those users who passed this project and continued in the Course in Paid service.
 
-The hypothesis is that Udacity will be able to know the seriously interested students and coaches will able to devote more time on those users who are actually interested to pass the course. The unit of diversion would be user ids when they register for introductory course.
+The hypothesis is that Udacity will be able reduce the number of frustrated students that leave courses mid-way thereby getting a negative feeling about Udacity and also wasting coaches' time. The unit of diversion would be user ids when they register for introductory course.
 
 Invariant Metrics: Number of users enroll in introductory free course.
 
