@@ -24,13 +24,13 @@ For the sake of this project, I will focus on Gross Conversion and Net conversio
 **List the standard deviation of each of your evaluation metrics**
 The standard deviation is calculated with the formula : SD = sqrt((p*(1-p)/N)
 ```
-Net Conversion: 0.0156
-Gross Conversion: 0.0202
+Net Conversion: N=400; p=0.1093; SD=0.0156
+Gross Conversion: N=400; p=0.2063; SD=0.0202
 ```
 
 **For each of your evaluation metrics, indicate whether you think the analytic estimate would be comparable to the the empirical variability, or whether you expect them to be different (in which case it might be worth doing an empirical estimate if there is time). Briefly give your reasoning in each case.**
 
-Both Gross conversion and net conversion will have the number of cookies as their denominator, which is also our unit of diversion. Hence, we can use an analytical estimate of the variance.
+Empirical Standard deviation should be comparable to analytic estimate for Gross and Net conversion because unit of diversion and unit of analysis is the same i.e. number of cookies.
 
 ###Sizing
 ####Number of Samples vs. Power
