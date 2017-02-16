@@ -119,9 +119,9 @@ I would like to put a follow up experiment in which the student needs to do a fr
 
 In order to reduce the attrition rate in early of course, that is those students who left the course early because they are unknowledgeable about pre requisite leanings. We need a course or a Project, such that the users able to get an idea what prerequisite knowledge they should know & and what the course is all about. The system also need an auto grader so coaches would spend more time to help those users who passed this project and continued in the Course in Paid service.
 
-The hypothesis is that Udacity will be able reduce the number of frustrated students that leave courses mid-way thereby getting a negative feeling about Udacity and also wasting coaches' time. The unit of diversion would be user ids when they register for introductory course.
+The hypothesis is that Udacity will be able reduce the number of frustrated students that leave courses mid-way thereby getting a negative feeling about Udacity and also wasting coaches' time. The unit of diversion would be cookies when they land on the introductory course page.
 
-Invariant Metrics: Number of users enroll in introductory free course. It is also worth noting that that cookie and click based metrics are not compatible with post-enrollment experiments. Hence, I have not chosen them here. The number of users would be a sufficient metric in to reach the experiment, one must have a user id.
+Invariant Metrics: We will use number of cookies as the invariant metric here. We will track each student with the cookies. The number of cookies will not change with the course of experiment.
 
 Evaluation Metrics: 
 Net Conversion : The net conversion would remain low as the number of students who pass the introductory course would be less and lesser will be the students who actually pay for further courses.
